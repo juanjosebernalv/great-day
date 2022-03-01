@@ -70,3 +70,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### `task 1: change page text to Hello World`
+
+### `task 2: Create a component call RaccoonButton, install bootstrap, use RaccoonButton, delete warnings`
