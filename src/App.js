@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import RaccoonButton from './components/RaccoonButton';
 import './App.css';
+
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <p>
           Hello World - Juan Jose.🏍️
         </p>
+        <RaccoonButton></RaccoonButton>
       </header>
     </div>
   );
