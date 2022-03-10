@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import MyButtonComponent from './components/MyButtonComponent';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <p>
           Hello World - Juan Jose.🏍️
         </p>
+        <MyButtonComponent></MyButtonComponent>
       </header>
     </div>
   );
