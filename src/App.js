@@ -1,48 +1,48 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import './App.css';
-import MyButtonComponent from './components/MyButtonComponent';
-import MyButtonStyled from './components/MyButtonStyled';
-import MyCard from './components/MyCard';
-import NotificationCard from './components/NotificationCard';
+import Menu from './components/Menu';
 
-import { menuData } from "./data/menuData";
-import NavigationButton from "./components/NavigationButton";
+const App = () => {
+    const [advice, setAdvice] = useState("");
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <p>
-          Hello World - Juan Jose.🏍️
-        </p> */}
-        {/* <MyButtonComponent></MyButtonComponent> */}
+    useEffect(() => {
+        const url = "https://api.adviceslip.com/advice";
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                console.log(json.slip.advice);
+                setAdvice(json.slip.advice);
+            } catch (error) {
+                console.log("error", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return (
         <Wrapper>
-            <ButtonsWrapper>
-                {menuData.map((data) => {
-                    return <NavigationButton image={data.image} title={data.title} />;
-                })}
-            </ButtonsWrapper>
+          {/* <Wrapper>
+              <Paragraph>{advice}</Paragraph>
+          </Wrapper> */}
+          <Menu></Menu>
         </Wrapper>
-
-        <MyButtonStyled></MyButtonStyled>
-        <MyCard></MyCard>
-        <NotificationCard></NotificationCard>
-      </header>
-    </div>
-  );
-}
+    );
+};
 
 export default App;
 
-
 const Wrapper = styled.div`
-    padding-top: 150px;
-    margin: 0 auto;
+    background-color: blueviolet;
 `;
 
-const ButtonsWrapper = styled.div`
-    display: flex;
-    justify-items: space-between;
-    justify-content: center;
+const Paragraph = styled.h2`
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 48px;
+    text-align: center;
 `;
