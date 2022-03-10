@@ -3,6 +3,7 @@ import './App.css';
 import MyButtonComponent from './components/MyButtonComponent';
 import MyButtonStyled from './components/MyButtonStyled';
 import MyCard from './components/MyCard';
+import NotificationCard from './components/NotificationCard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         {/* <MyButtonComponent></MyButtonComponent> */}
         <MyButtonStyled></MyButtonStyled>
         <MyCard></MyCard>
+        <NotificationCard></NotificationCard>
       </header>
     </div>
   );
