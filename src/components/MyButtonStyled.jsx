@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import styled from "styled-components";
 
 const MyButtonStyled = () => {
+    const [count, setCount] = useState(0);
+
     return (
     <div>
-        <Button>Sign in</Button>
+        <Button onClick={() => setCount(count + 1)} >You Clicked {count} times</Button>
         <Button disabled>Sign in</Button>
     </div>
     )
@@ -23,4 +26,5 @@ const Button = styled.button`
   color: white;
   font-weight: bold;
   font-family: Segoe UI, sans-serif;
+  cursor: pointer;
 `;
