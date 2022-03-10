@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from "styled-components";
 
 const MyButtonStyled = () => {
     const [count, setCount] = useState(0);
+
+    const ref = useRef(null);
+
     useEffect(() => {
         // Mounting
 
@@ -12,12 +15,26 @@ const MyButtonStyled = () => {
         }
     }, [//Updating
     count
-    ])
+    ]);
+
+    useEffect(() => {
+        if (ref) {
+            ref.current.click();
+        }
+    });
+
+
 
     return (
     <div>
-        <Button onClick={() => setCount(count + 1)} >You Clicked {count} times</Button>
+        <Button
+            onClick={() => setCount(count + 1)}>
+                You Clicked {count} times
+        </Button>
         <Button disabled>Sign in</Button>
+        <Button onClick={() => alert("You clicked!")} ref={ref}>
+                You Clicked Ref Btn
+        </Button>
     </div>
     )
 };
