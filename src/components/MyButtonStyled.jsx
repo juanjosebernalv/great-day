@@ -1,8 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "styled-components";
 
 const MyButtonStyled = () => {
     const [count, setCount] = useState(0);
+    useEffect(() => {
+        // Mounting
+
+        return () => {
+            // Cleanup function
+            document.title = `You clicked ${count} times.`
+        }
+    }, [//Updating
+    count
+    ])
 
     return (
     <div>
