@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Button from './components/Button';
 import Menu from './components/Menu';
 import MyPage from './components/MyPage';
 import MyPageIntersectionObs from './components/MyPageIntersectionObs';
+import Subtitle from './components/Subtitle';
 import Form from './Forms/Form';
+import { ThemeProvider } from './ThemeContext';
 
 
 const App = () => {
@@ -30,11 +33,18 @@ const App = () => {
         // <Wrapper>
         //   <Menu></Menu>
         // </Wrapper>
-        <>
-            <Form></Form>
-            <MyPage></MyPage>
-            <MyPageIntersectionObs></MyPageIntersectionObs>
-        </>
+        // <>
+        //     <Form></Form>
+        //     <MyPage></MyPage>
+        //     <MyPageIntersectionObs></MyPageIntersectionObs>
+        // </>
+        <ThemeProvider>
+            <Wrapper>
+                <Subtitle></Subtitle>
+                <Button></Button>
+            </Wrapper>
+
+        </ThemeProvider>
     );
 };
 
