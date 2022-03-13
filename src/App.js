@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Menu from './components/Menu';
+import Form from './Forms/Form';
+
 
 const App = () => {
     const [advice, setAdvice] = useState("");
@@ -23,12 +25,10 @@ const App = () => {
     }, []);
 
     return (
-        <Wrapper>
-          {/* <Wrapper>
-              <Paragraph>{advice}</Paragraph>
-          </Wrapper> */}
-          <Menu></Menu>
-        </Wrapper>
+        // <Wrapper>
+        //   <Menu></Menu>
+        // </Wrapper>
+        <Form></Form>
     );
 };
 
