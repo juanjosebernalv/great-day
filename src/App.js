@@ -10,14 +10,24 @@ import { ThemeProvider } from './ThemeContext';
 
 import backgroundImage from "./background.png";
 import Dashboard from "./components/Dashboard";
+import LazyLoad from "react-lazyload";
 
 
 const App = () => {
     return (
         <Wrapper>
             <Background src={backgroundImage} alt="background" />
-            <Title>Fragments</Title>
-            <Dashboard />
+            <Title>Lazy Load</Title>
+            <LazyLoad offset={100} height={200}>
+                <Image src="https://images.ctfassets.net/ooa29xqb8tix/2KiUooJBmI26N6u5gr2rlm/e2bb070640fe2778e1a58d160335cbe7/React_Hooks_handbook_800x600_cover_new.png?w=400&q=50" />
+            </LazyLoad>
+            <LazyLoad offset={100} height={200} >
+                <Image src="https://images.ctfassets.net/ooa29xqb8tix/2KiUooJBmI26N6u5gr2rlm/e2bb070640fe2778e1a58d160335cbe7/React_Hooks_handbook_800x600_cover_new.png?w=400&q=50" />
+            </LazyLoad>
+            <LazyLoad offset={-100} height={200}>
+                <Image src="https://images.ctfassets.net/ooa29xqb8tix/2KiUooJBmI26N6u5gr2rlm/e2bb070640fe2778e1a58d160335cbe7/React_Hooks_handbook_800x600_cover_new.png?w=400&q=50" />
+            </LazyLoad>
+            {/* <Dashboard /> */}
         </Wrapper>
     );
 };
@@ -46,3 +56,9 @@ const Background = styled.img`
   top: 0px;
   z-index: -1;
 `;
+
+const Image = styled.img`
+  height: 200px;
+  margin: 20px;
+`;
+
