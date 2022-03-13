@@ -8,7 +8,7 @@ import useScrollPosition from '../hooks/useScrollPosition';
 const MyPage = () => {
   const scrollPosition = useScrollPosition();
 
-  console.log(scrollPosition);
+  // console.log(scrollPosition);
 
   return (
     <Description>

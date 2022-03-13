@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Menu from './components/Menu';
 import MyPage from './components/MyPage';
+import MyPageIntersectionObs from './components/MyPageIntersectionObs';
 import Form from './Forms/Form';
 
 
@@ -32,6 +33,7 @@ const App = () => {
         <>
             <Form></Form>
             <MyPage></MyPage>
+            <MyPageIntersectionObs></MyPageIntersectionObs>
         </>
     );
 };
