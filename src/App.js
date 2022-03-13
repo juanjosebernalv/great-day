@@ -8,57 +8,41 @@ import Subtitle from './components/Subtitle';
 import Form from './Forms/Form';
 import { ThemeProvider } from './ThemeContext';
 
+import backgroundImage from "./background.png";
+import Dashboard from "./components/Dashboard";
+
 
 const App = () => {
-    const [advice, setAdvice] = useState("");
-
-    useEffect(() => {
-        const url = "https://api.adviceslip.com/advice";
-
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const json = await response.json();
-                console.log(json.slip.advice);
-                setAdvice(json.slip.advice);
-            } catch (error) {
-                console.log("error", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
     return (
-        // <Wrapper>
-        //   <Menu></Menu>
-        // </Wrapper>
-        // <>
-        //     <Form></Form>
-        //     <MyPage></MyPage>
-        //     <MyPageIntersectionObs></MyPageIntersectionObs>
-        // </>
-        <ThemeProvider>
-            <Wrapper>
-                <Subtitle></Subtitle>
-                <Button></Button>
-            </Wrapper>
-
-        </ThemeProvider>
+        <Wrapper>
+            <Background src={backgroundImage} alt="background" />
+            <Title>Fragments</Title>
+            <Dashboard />
+        </Wrapper>
     );
 };
 
 export default App;
 
 const Wrapper = styled.div`
-    background-color: blueviolet;
+  padding-top: 150px;
+  margin: 0 auto;
 `;
 
-const Paragraph = styled.h2`
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 48px;
-    text-align: center;
+const Title = styled.h1`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+  color: #ffffff;
+  text-align: center;
+`;
+
+const Background = styled.img`
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: -1;
 `;
